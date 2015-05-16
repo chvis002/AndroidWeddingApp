@@ -1,17 +1,49 @@
 package christopherfrida.christopherfridasweddingapp;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
+
+    private ArrayList<String> links;
+    private ArrayAdapter<String> linksAdapter;
+    private ListView lvLinks;
+
+    private ScoreDbAdapter scoreDbAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        scoreDbAdapter = new ScoreDbAdapter(this);
+        // scoreDbAdapter.open(); //needed?
+
+        lvLinks = (ListView) findViewById(R.id.listView);
+
+        // All links
+        links = new ArrayList<String>();
+        links.add("Information");
+        links.add("Vägbeskrivning");
+        links.add("Bilder");
+        links.add("Frågespel");
+
+        linksAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, links);
+        lvLinks.setAdapter(linksAdapter);
+
+        setupListViewListener();
     }
 
     @Override
@@ -34,5 +66,40 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setupListViewListener() {
+
+        /*
+        lvLinks.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapter, View item, int pos, long id) {
+
+                items.remove(pos);
+                itemsAdapter.notifyDataSetChanged();
+                return true;
+            }
+        });*/
+
+
+        lvLinks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View item, int pos, long id) {
+
+
+                Log.d("setOnITemClickListner", "Pos: "+pos+" id: "+id+"View"+item.toString());
+                Log.i("setOnITemClickListner", "Pos: "+pos+" id: "+id+"View"+item.toString());
+                switch (pos){//Todo dependent on pos start correct activity
+                    case 0: break;//starta Information
+                    case 1: break;//starta Vägbeskrivning
+                    case 2: break;//starta Bilder från instagram
+                    case 3: break;//Frågespel
+                }
+
+
+
+            }
+        });
+
     }
 }
