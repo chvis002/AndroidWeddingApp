@@ -73,6 +73,10 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(this, InformationActivity.class);
         startActivity(intent);
     }
+    protected void startDirectionsMap(){
+        Intent intent = new Intent(this, DirectionsMap.class);
+        startActivity(intent);
+    }
 
     private void setupListViewListener() {
 
@@ -87,7 +91,9 @@ public class MainActivity extends ActionBarActivity {
                     case 0:
                         startInformationView(); //can't create Intents inside another class...
                         break;//starta Information
-                    case 1: break;//starta Vägbeskrivning
+                    case 1:
+                        startDirectionsMap();
+                        break;//starta Vägbeskrivning
                     case 2: break;//starta Bilder från instagram
                     case 3: break;//Frågespel
                 }

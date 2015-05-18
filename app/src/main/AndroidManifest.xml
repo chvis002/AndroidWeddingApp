@@ -24,6 +24,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="christopherfrida.christopherfridasweddingapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".DirectionsMap"
+            android:label="@string/title_activity_directions_map"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="christopherfrida.christopherfridasweddingapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
