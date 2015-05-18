@@ -16,7 +16,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
     private ArrayList<String> links;
     private ArrayAdapter<String> linksAdapter;
@@ -76,18 +76,6 @@ public class MainActivity extends Activity {
 
     private void setupListViewListener() {
 
-        /*
-        lvLinks.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapter, View item, int pos, long id) {
-
-                items.remove(pos);
-                itemsAdapter.notifyDataSetChanged();
-                return true;
-            }
-        });*/
-
-
         lvLinks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View item, int pos, long id) {
@@ -97,7 +85,7 @@ public class MainActivity extends Activity {
                 Log.i("setOnITemClickListner", "Pos: "+pos+" id: "+id+"View"+item.toString());
                 switch (pos){//Todo dependent on pos start correct activity
                     case 0:
-                        startInformationView();
+                        startInformationView(); //can't create Intents inside another class...
                         break;//starta Information
                     case 1: break;//starta Vägbeskrivning
                     case 2: break;//starta Bilder från instagram
