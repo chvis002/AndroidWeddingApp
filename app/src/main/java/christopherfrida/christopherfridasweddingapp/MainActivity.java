@@ -1,6 +1,7 @@
 package christopherfrida.christopherfridasweddingapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 
 import android.os.Bundle;
@@ -68,6 +69,11 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    protected void startInformationView(){
+        Intent intent = new Intent(this, InformationActivity.class);
+        startActivity(intent);
+    }
+
     private void setupListViewListener() {
 
         /*
@@ -90,7 +96,9 @@ public class MainActivity extends Activity {
                 Log.d("setOnITemClickListner", "Pos: "+pos+" id: "+id+"View"+item.toString());
                 Log.i("setOnITemClickListner", "Pos: "+pos+" id: "+id+"View"+item.toString());
                 switch (pos){//Todo dependent on pos start correct activity
-                    case 0: break;//starta Information
+                    case 0:
+                        startInformationView();
+                        break;//starta Information
                     case 1: break;//starta Vägbeskrivning
                     case 2: break;//starta Bilder från instagram
                     case 3: break;//Frågespel
