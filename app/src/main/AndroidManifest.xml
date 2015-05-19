@@ -42,7 +42,7 @@ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
                 android:value="christopherfrida.christopherfridasweddingapp.MainActivity" />
         </activity>
         <activity
-            android:name=".DirectionsMap"
+            android:name=".MapFragment"
             android:label="@string/title_activity_directions_map"
             android:parentActivityName=".MainActivity" >
             <meta-data

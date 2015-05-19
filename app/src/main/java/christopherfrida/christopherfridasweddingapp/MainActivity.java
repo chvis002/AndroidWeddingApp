@@ -73,7 +73,7 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
     protected void startDirectionsMap(){
-        Intent intent = new Intent(this, DirectionsMap.class);
+        Intent intent = new Intent(this, MapFragment.class);
         startActivity(intent);
     }
 

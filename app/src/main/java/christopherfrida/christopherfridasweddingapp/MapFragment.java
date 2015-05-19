@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class DirectionsMap extends FragmentActivity {
+public class MapFragment extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private GoogleMapOptions mapOptions;
@@ -37,7 +37,7 @@ public class DirectionsMap extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_directions_map);
+        setContentView(R.layout.fragment_map);
         setUpMapIfNeeded();
     }
 
