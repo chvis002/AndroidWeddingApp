@@ -1,10 +1,8 @@
 package christopherfrida.christopherfridasweddingapp;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
-
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,6 +38,7 @@ public class MainActivity extends ActionBarActivity {
         links.add("Vägbeskrivning");
         links.add("Bilder");
         links.add("Frågespel");
+        links.add("Kontakta oss");
 
         linksAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, links);
         lvLinks.setAdapter(linksAdapter);
@@ -96,6 +95,9 @@ public class MainActivity extends ActionBarActivity {
                         break;//starta Vägbeskrivning
                     case 2: break;//starta Bilder från instagram
                     case 3: break;//Frågespel
+                    case 4: //Skicka mail till mailadress, frågeformulär
+
+                        break;
                 }
 
 

@@ -1,10 +1,17 @@
 package christopherfrida.christopherfridasweddingapp;
 
+import android.content.Context;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -12,7 +19,18 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class DirectionsMap extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
+    private GoogleMapOptions mapOptions;
 
+    //KYRKAN
+    private final static double LONGITUDE_CHURCH = 15.724973;
+    private final static double LATITUDE_CHURCH = 58.369521;
+
+    //HEMBYGDSGÅRDEN
+    private final static double LONGITUDE_PARTY = 15.715126;
+    private final static double LATITUDE_PARTY = 58.378309;
+
+    private LatLng churchLocation = new LatLng(LATITUDE_CHURCH, LONGITUDE_CHURCH);
+    private LatLng partyLocation = new LatLng(LATITUDE_PARTY, LONGITUDE_PARTY);
 
 
 
@@ -68,9 +86,9 @@ public class DirectionsMap extends FragmentActivity {
 
         mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker").snippet("Snippet"));
 
-        /* change to Landeryds kyrka
+
         // Enable MyLocation Layer of Google Map
-        mMap.setMyLocationEnabled(true);
+        //mMap.setMyLocationEnabled(true);
 
         // Get LocationManager object from System Service LOCATION_SERVICE
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -87,21 +105,17 @@ public class DirectionsMap extends FragmentActivity {
         // set map type
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-        // Get latitude of the current location
-        double latitude = myLocation.getLatitude();
-
-        // Get longitude of the current location
-        double longitude = myLocation.getLongitude();
-
-        // Create a LatLng object for the current location
-        LatLng latLng = new LatLng(latitude, longitude);
-
         // Show the current location in Google Map
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(churchLocation));
+        mMap.addMarker(new MarkerOptions().position(churchLocation).
+                title("Landeryds kyrka").snippet("Här ska vi vara!")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.wedding_icon2)));
 
-        // Zoom in the Google Map
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("You are here!").snippet("Consider yourself located"));
-        */
+        mMap.addMarker(
+                new MarkerOptions().position(partyLocation)
+                        .title("Landeryds hembygdsgård").snippet("Här är festen")
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.party_icon2)));
+
+
     }
 }
