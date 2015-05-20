@@ -77,6 +77,10 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    protected void startContactUs() {
+        Intent intent = new Intent(this, ContactUsActivity.class);
+        startActivity(intent);
+    }
     private void setupListViewListener() {
 
         lvLinks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -95,7 +99,9 @@ public class MainActivity extends ActionBarActivity {
                         break;//starta Vägbeskrivning
                     case 2: break;//starta Bilder från instagram
                     case 3: break;//Frågespel
-                    case 4: //Skicka mail till mailadress, frågeformulär
+                    case 4:
+                        startContactUs();
+                    //Skicka mail till mailadress, frågeformulär
 
                         break;
                 }
