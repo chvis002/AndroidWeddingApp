@@ -60,6 +60,12 @@ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
             android:name=".ContactUsActivity"
             android:label="@string/title_activity_contact_us"
             android:parentActivityName=".MainActivity" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="christopherfrida.christopherfridasweddingapp.MainActivity" />

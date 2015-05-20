@@ -10,9 +10,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Skicka!"
-        android:id="@+id/button"
+        android:id="@+id/send_button"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="sendMessage"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -20,7 +21,7 @@
         android:id="@+id/title_ET"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/button"
+        android:layout_alignStart="@+id/send_button"
         android:text="Titel" />
 
     <TextView
@@ -40,8 +41,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Meddelande: "
-        android:id="@+id/meddelande_TV"
-        android:labelFor="@+id/meddelande_ET"
+        android:id="@+id/message_TV"
+        android:labelFor="@+id/message_ET"
         android:gravity="center_vertical"
         android:textSize="@dimen/abc_text_size_medium_material"
         android:layout_marginTop="68dp"
@@ -53,8 +54,8 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/meddelande_ET"
-        android:layout_alignTop="@+id/meddelande_TV"
+        android:id="@+id/message_ET"
+        android:layout_alignTop="@+id/message_TV"
         android:layout_alignStart="@+id/title_ET"
         android:text="Meddelande" />
 
