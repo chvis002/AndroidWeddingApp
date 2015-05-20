@@ -58,8 +58,8 @@ public class ContactUsActivity extends ActionBarActivity {
 
     public void sendMessage(View v) {
 
-        String titleText = findViewById(R.id.title_ET).toString();
-        String messageText = findViewById(R.id.message_ET).toString();
+        String titleText = title.getText().toString();
+        String messageText = message.getText().toString();
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
@@ -69,7 +69,9 @@ public class ContactUsActivity extends ActionBarActivity {
 
         if (intent.resolveActivity(getPackageManager()) != null){
             Log.d(" sendMessage(View v)", "success!");
-            startActivity(intent);
+            //startActivity(intent);
+            startActivity(Intent.createChooser(intent, "Send email..."));
+
         }
         else {
             Log.d(" sendMessage(View v)", "fail");
