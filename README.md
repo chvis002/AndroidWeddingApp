@@ -16,6 +16,6 @@
 * skapa bröllopsmail (gmail) och ändra contactusU
 * ~~starta contactUs fast med startActivityWithResult~~
 * ~~popup i mainActivity med finish on result~~
-* ordna ÅÄÖ (måste använda Stings xml :( ?)
+* ~~ordna ÅÄÖ (måste använda Stings xml :( ?)~~
 * Contact us Skicka knapp flyttas upp när skrivbord dyker upp
 * ~~header fast activiteten är fragmentActivity?~~
