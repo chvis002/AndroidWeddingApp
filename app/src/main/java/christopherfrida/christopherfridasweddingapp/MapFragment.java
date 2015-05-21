@@ -5,7 +5,7 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class MapFragment extends FragmentActivity {
+public class MapFragment extends AppCompatActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private GoogleMapOptions mapOptions;
@@ -108,7 +108,7 @@ public class MapFragment extends FragmentActivity {
         // Show the current location in Google Map
         mMap.moveCamera(CameraUpdateFactory.newLatLng(churchLocation));
         mMap.addMarker(new MarkerOptions().position(churchLocation).
-                title("Landeryds kyrka").snippet("Här ska vi vara!")
+                title("Landeryds kyrka").snippet("Här gifter vi oss!")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.wedding_icon2)));
 
         mMap.addMarker(

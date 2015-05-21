@@ -3,7 +3,7 @@ package christopherfrida.christopherfridasweddingapp;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +15,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> links;
     private ArrayAdapter<String> linksAdapter;
@@ -42,6 +42,7 @@ public class MainActivity extends FragmentActivity {
         links.add("Bilder");
         links.add("Frågespel");
         links.add("Kontakta oss");
+        links.add("avsluta");
 
         linksAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, links);
         lvLinks.setAdapter(linksAdapter);
@@ -129,6 +130,8 @@ public class MainActivity extends FragmentActivity {
                     //Skicka mail till mailadress, frågeformulär
 
                         break;
+                    case 5:
+                        finish();
                 }
 
 

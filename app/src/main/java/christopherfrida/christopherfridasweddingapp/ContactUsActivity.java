@@ -3,7 +3,7 @@ package christopherfrida.christopherfridasweddingapp;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class ContactUsActivity extends ActionBarActivity {
+public class ContactUsActivity extends AppCompatActivity {
 
     private EditText title;
     private EditText message;
@@ -88,7 +88,7 @@ public class ContactUsActivity extends ActionBarActivity {
         else {
             Log.d(" sendMessage(View v)", "fail");
             Intent returnIntent = new Intent();
-            setResult(RESULT_CANCELED,returnIntent);
+            setResult(RESULT_CANCELED, returnIntent);
             finish();
         }
     }
