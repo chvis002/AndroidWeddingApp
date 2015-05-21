@@ -74,13 +74,22 @@ public class ContactUsActivity extends ActionBarActivity {
         if (intent.resolveActivity(getPackageManager()) != null){
             Log.d(" sendMessage(View v)", "success!");
             //startActivity(intent);
-            startActivity(Intent.createChooser(intent, "Skicka meddelande med:"));
+            startActivityForResult(Intent.createChooser(intent, "Skicka meddelande med:"), MainActivity.EMAIL_SENT_RESULT_CODE);
+
+            Intent returnIntent = new Intent();
+            /* If you want to send message with the tag result */
+            // returnIntent.putExtra("result","success");
+            setResult(RESULT_OK,returnIntent);
+
             finish();
 
 
         }
         else {
             Log.d(" sendMessage(View v)", "fail");
+            Intent returnIntent = new Intent();
+            setResult(RESULT_CANCELED,returnIntent);
+            finish();
         }
     }
 

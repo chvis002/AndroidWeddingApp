@@ -16,3 +16,4 @@
 *skapa bröllopsmail (gmail) och ändra contactusU
 *starta contactUs fast med startActivityWithResult
 *popup i mainActivity med finish on result
+*ordna ÅÄÖ (måste använda Stings xml :( ?)

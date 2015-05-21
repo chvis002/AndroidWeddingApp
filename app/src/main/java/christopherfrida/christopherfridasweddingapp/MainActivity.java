@@ -84,23 +84,23 @@ public class MainActivity extends FragmentActivity {
         Intent intent = new Intent(this, ContactUsActivity.class);
         startActivityForResult(intent, EMAIL_SENT_RESULT_CODE);
     }
-    /*
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         switch (requestCode){
-            case EMAIL_SENT_RESULT_CODE:
+            case MainActivity.EMAIL_SENT_RESULT_CODE:
                 if (resultCode == RESULT_OK){
-                    Bundle res = data.getExtras();
-                    String result = res.getString("param_result");
-                    Log.d("FIRST","result: "+result);
+                    DialogFragment message = new ThanksDialogFragment();
+                    message.show(getFragmentManager(),"thanks");
                 }
                 break;
         }
     }
-    */
+
+
+
     protected void startImages() {
 
-        DialogFragment message = new ThanksDialogFragment();
-        message.show(getFragmentManager(),"thanks");
+
 
     }
 
