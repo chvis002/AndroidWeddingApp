@@ -2,18 +2,20 @@
 ##ToDo
 
 ###Instagram
-*ladda instagram med intent
-*hämta bilder med hashtag från api
-*pagnation med bilder
-*lägga till bilder på fördefinerat konto (bröllopskonto) med api?
-*ordna med fragments + knappar
+* ladda instagram med intent
+* hämta bilder med hashtag från api
+* pagnation med bilder
+* lägga till bilder på fördefinerat konto (bröllopskonto) med api?
+* ordna med fragments + knappar
 
 ###Google maps
-*ordna med fragemnts
-*lägg till länk till vägbeskrivning i snippet (intent?)
+* ordna med fragemnts
+* lägg till länk till vägbeskrivning i snippet (intent?)
 
 ###Annat
-*skapa bröllopsmail (gmail) och ändra contactusU
-*starta contactUs fast med startActivityWithResult
-*popup i mainActivity med finish on result
-*ordna ÅÄÖ (måste använda Stings xml :( ?)
+* skapa bröllopsmail (gmail) och ändra contactusU
+* ~~starta contactUs fast med startActivityWithResult~~
+* ~~popup i mainActivity med finish on result~~
+* ordna ÅÄÖ (måste använda Stings xml :( ?)
+* Contact us Skicka knapp flyttas upp när skrivbord dyker upp
+* header fast activiteten är fragmentActivity?
