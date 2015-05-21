@@ -19,3 +19,4 @@
 * ~~ordna ÅÄÖ (måste använda Stings xml :( ?)~~
 * Contact us Skicka knapp flyttas upp när skrivbord dyker upp
 * ~~header fast activiteten är fragmentActivity?~~
+* kolla om det finns intent från mail skikcat (inte bara tryckt tillbaka)
