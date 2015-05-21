@@ -20,6 +20,8 @@ public class MainActivity extends ActionBarActivity {
     private ArrayAdapter<String> linksAdapter;
     private ListView lvLinks;
 
+    public final static int EMAIL_SENT_RESULT_CODE = 90;
+
     private ScoreDbAdapter scoreDbAdapter;
 
     @Override
@@ -79,8 +81,21 @@ public class MainActivity extends ActionBarActivity {
 
     protected void startContactUs() {
         Intent intent = new Intent(this, ContactUsActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent,EMAIL_SENT_RESULT_CODE);
     }
+    /*
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        switch (requestCode){
+            case EMAIL_SENT_RESULT_CODE:
+                if (resultCode == RESULT_OK){
+                    Bundle res = data.getExtras();
+                    String result = res.getString("param_result");
+                    Log.d("FIRST","result: "+result);
+                }
+                break;
+        }
+    }
+    */
     private void setupListViewListener() {
 
         lvLinks.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -74,7 +74,8 @@ public class ContactUsActivity extends ActionBarActivity {
         if (intent.resolveActivity(getPackageManager()) != null){
             Log.d(" sendMessage(View v)", "success!");
             //startActivity(intent);
-            startActivity(Intent.createChooser(intent, "Send your email in:"));
+            startActivity(Intent.createChooser(intent, "Skicka meddelande med:"));
+            finish();
 
 
         }
