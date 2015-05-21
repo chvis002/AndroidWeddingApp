@@ -67,7 +67,7 @@ public class ContactUsActivity extends AppCompatActivity {
         intent.setType("plain/text");
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_EMAIL, EMAIL_ADDRESS);
-        intent.putExtra(Intent.EXTRA_CC,EMAIL_CC_ADDRESS);
+//        intent.putExtra(Intent.EXTRA_CC,EMAIL_CC_ADDRESS);
         intent.putExtra(Intent.EXTRA_SUBJECT,titleText);
         intent.putExtra(Intent.EXTRA_TEXT, messageText);
 

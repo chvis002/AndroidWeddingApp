@@ -3,10 +3,16 @@
 
     <string name="hello_world">Hello world!!!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_information">InformationActivity</string>
+    <string name="title_activity_information">Information</string>
     <string name="title_activity_directions_map">Vägbeskrivning</string>
-    <string name="title_activity_contact_us">ContactUsActivity</string>
+    <string name="title_activity_contact_us">Kontakta oss</string>
+    <string name="title_activity_quiz">Frågespel</string>
+    <string name="thanks_dialog_message">Tack för meddelandet!</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="map_church_title">Landeryds kyrka</string>
+    <string name="map_church_subtitle">Här ska vi gifta oss 14:30</string>
+    <string name="map_party_title">Landeryds hembygdsgård</string>
+    <string name="map_party_subtitle">Här är festen senare!</string>
+
+
 </resources>

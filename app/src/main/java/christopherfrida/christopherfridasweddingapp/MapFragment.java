@@ -21,11 +21,11 @@ public class MapFragment extends AppCompatActivity {
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private GoogleMapOptions mapOptions;
 
-    //KYRKAN
+    //church
     private final static double LONGITUDE_CHURCH = 15.724973;
     private final static double LATITUDE_CHURCH = 58.369521;
 
-    //HEMBYGDSGÅRDEN
+    //party
     private final static double LONGITUDE_PARTY = 15.715126;
     private final static double LATITUDE_PARTY = 58.378309;
 
@@ -84,7 +84,7 @@ public class MapFragment extends AppCompatActivity {
     private void setUpMap() {
         //mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
 
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker").snippet("Snippet"));
+        //mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker").snippet("Snippet"));
 
 
         // Enable MyLocation Layer of Google Map
@@ -108,12 +108,14 @@ public class MapFragment extends AppCompatActivity {
         // Show the current location in Google Map
         mMap.moveCamera(CameraUpdateFactory.newLatLng(churchLocation));
         mMap.addMarker(new MarkerOptions().position(churchLocation).
-                title("Landeryds kyrka").snippet("Här gifter vi oss!")
+                title(getString(R.string.map_church_title))
+                .snippet(getString(R.string.map_church_subtitle))
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.wedding_icon2)));
 
         mMap.addMarker(
                 new MarkerOptions().position(partyLocation)
-                        .title("Landeryds hembygdsgård").snippet("Här är festen")
+                        .title(getString(R.string.map_party_title))
+                        .snippet(getString(R.string.map_party_subtitle))
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.party_icon2)));
 
 

@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
         // All links
         links = new ArrayList<String>();
-        links.add("Information");
-        links.add("Vägbeskrivning");
+        links.add(getString(R.string.title_activity_information));
+        links.add(getString(R.string.title_activity_directions_map));
         links.add("Bilder");
-        links.add("Frågespel");
-        links.add("Kontakta oss");
+        links.add(getString(R.string.title_activity_quiz));
+        links.add(getString(R.string.title_activity_contact_us));
         links.add("avsluta");
 
         linksAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, links);
@@ -120,14 +120,14 @@ public class MainActivity extends AppCompatActivity {
                         break;//starta Information
                     case 1:
                         startDirectionsMap();
-                        break;//starta Vägbeskrivning
+                        break;//starta directions
                     case 2:
                         startImages();
-                        break;//starta Bilder från instagram
-                    case 3: break;//Frågespel
+                        break;//starta Bilder from instagram
+                    case 3: break;//quiz
                     case 4:
                         startContactUs();
-                    //Skicka mail till mailadress, frågeformulär
+                    //Skicka mail till mailadress
 
                         break;
                     case 5:

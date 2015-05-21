@@ -18,4 +18,4 @@
 * ~~popup i mainActivity med finish on result~~
 * ordna ÅÄÖ (måste använda Stings xml :( ?)
 * Contact us Skicka knapp flyttas upp när skrivbord dyker upp
-* header fast activiteten är fragmentActivity?
+* ~~header fast activiteten är fragmentActivity?~~

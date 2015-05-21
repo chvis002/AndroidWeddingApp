@@ -18,7 +18,7 @@ public class ThanksDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("Tack för meddelandet")
+        builder.setMessage(getString(R.string.thanks_dialog_message))
                 .setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int id){
                         //nothing???
