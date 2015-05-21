@@ -1,8 +1,9 @@
 package christopherfrida.christopherfridasweddingapp;
 
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +15,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends FragmentActivity {
 
     private ArrayList<String> links;
     private ArrayAdapter<String> linksAdapter;
@@ -81,7 +82,7 @@ public class MainActivity extends ActionBarActivity {
 
     protected void startContactUs() {
         Intent intent = new Intent(this, ContactUsActivity.class);
-        startActivityForResult(intent,EMAIL_SENT_RESULT_CODE);
+        startActivityForResult(intent, EMAIL_SENT_RESULT_CODE);
     }
     /*
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -96,6 +97,13 @@ public class MainActivity extends ActionBarActivity {
         }
     }
     */
+    protected void startImages() {
+
+        DialogFragment message = new ThanksDialogFragment();
+        message.show(getFragmentManager(),"thanks");
+
+    }
+
     private void setupListViewListener() {
 
         lvLinks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -112,7 +120,9 @@ public class MainActivity extends ActionBarActivity {
                     case 1:
                         startDirectionsMap();
                         break;//starta Vägbeskrivning
-                    case 2: break;//starta Bilder från instagram
+                    case 2:
+                        startImages();
+                        break;//starta Bilder från instagram
                     case 3: break;//Frågespel
                     case 4:
                         startContactUs();
