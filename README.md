@@ -14,6 +14,7 @@
 
 ###Annat
 * skapa bröllopsmail (gmail) och ändra contactusU
+* ta bort settings
 * ~~starta contactUs fast med startActivityWithResult~~
 * ~~popup i mainActivity med finish on result~~
 * ~~ordna ÅÄÖ (måste använda Stings xml :( ?)~~
