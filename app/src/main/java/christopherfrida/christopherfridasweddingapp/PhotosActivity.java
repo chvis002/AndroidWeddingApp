@@ -27,9 +27,9 @@ public class PhotosActivity extends AppCompatActivity {
     private ProgressBar mLoadingPb;
     private GridView mGridView;
 
-    private final String CLIENT_ID = getString(R.string.instagram_client_id);
-    private final String CLIENT_SECRET = getString(R.string.instagram_client_secret);
-    private final String REDIRECT_URI = getString(R.string.instagram_redirect_uri);
+    private  String CLIENT_ID = getString(R.string.instagram_client_id);
+    private  String CLIENT_SECRET = getString(R.string.instagram_client_secret);
+    private  String REDIRECT_URI = getString(R.string.instagram_redirect_uri);
 
 
     @Override
