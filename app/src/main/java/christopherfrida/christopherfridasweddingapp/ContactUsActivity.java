@@ -31,6 +31,22 @@ public class ContactUsActivity extends AppCompatActivity {
         title = (EditText) findViewById(R.id.title_ET);
         message = (EditText) findViewById(R.id.message_ET);
 
+        /*
+        message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                ViewGroup.LayoutParams vg_lp = view.getLayoutParams();
+
+                // Make sure we are in RelativeLayout
+                if (vg_lp instanceof RelativeLayout.LayoutParams) {
+                    RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(vg_lp);
+                    rl_lp.addRule(RelativeLayout.CENTER_IN_PARENT);
+                    view.setLayoutParams(rl_lp);
+                    Log.d("click", "click");
+                }
+            }
+        });
+        */
 
 
     }

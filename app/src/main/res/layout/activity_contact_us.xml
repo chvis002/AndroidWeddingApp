@@ -61,7 +61,8 @@
         android:gravity="center"
         android:layout_below="@+id/message_ET"
         android:layout_marginTop="20dp"
-        android:onClick="sendMessage"/>
+        android:onClick="sendMessage"
+        android:layout_alignParentBottom="true"/>
 
 
     <TextView
