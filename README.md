@@ -9,8 +9,8 @@
 * ordna med fragments + knappar
 
 ###Google maps
-* ordna med fragemnts
-* lägg till länk till vägbeskrivning i snippet (intent?)
+* ~~ordna med fragemnts~~ done?
+* lägg till länk till vägbeskrivning i snippet http://stackoverflow.com/questions/14123243/google-maps-android-api-v2-interactive-infowindow-like-in-original-android-go
 
 ###Annat
 * skapa bröllopsmail (gmail) och ändra contactusU
@@ -19,5 +19,7 @@
 * ~~popup i mainActivity med finish on result~~
 * ~~ordna ÅÄÖ (måste använda Stings xml :( ?)~~
 * Contact us Skicka knapp flyttas upp när skrivbord dyker upp
+* ordna layout på meny-top
+* ordna layout på main menu
 * ~~header fast activiteten är fragmentActivity?~~
 * kolla om det finns intent från mail skikcat (inte bara tryckt tillbaka)

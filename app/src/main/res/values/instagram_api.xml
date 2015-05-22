@@ -1,0 +1,23 @@
+
+<resources>
+
+    <string name="instagram_client_id" translatable="false" templateMergeStrategy="preserve">
+        00dde0c83c964baf98d5d9a00367855d
+    </string>
+    <string name="instagram_client_secret" translatable="false" templateMergeStrategy="preserve">
+        c89b364dd5a84544b069752082547be2
+    </string>
+    <string name="instagram_support_email" translatable="false" templateMergeStrategy="preserve">
+        chvis002@gmail.com
+    </string>
+    <string name="instagram_redirect_uri" translatable="false" templateMergeStrategy="preserve">
+        http://localhost
+    </string>
+    <string name="instagram_access_token" translatable="false" templateMergeStrategy="preserve">
+        181858847.00dde0c.402af8f6eba64e89a7a2e1a930bd2d94
+    </string>
+
+
+
+
+</resources>
