@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
 
     protected void startImages() {
 
+        Intent intent = new Intent(this, PhotoActivity.class);
+        startActivity(intent);
 
 
     }

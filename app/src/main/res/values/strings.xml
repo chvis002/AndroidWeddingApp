@@ -13,6 +13,7 @@
     <string name="map_church_subtitle">Här ska vi gifta oss 14:30</string>
     <string name="map_party_title">Landeryds hembygdsgård</string>
     <string name="map_party_subtitle">Här är festen senare!</string>
+    <string name="title_activity_photo">PhotoActivity</string>
 
 
 </resources>
