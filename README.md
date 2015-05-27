@@ -3,14 +3,18 @@
 
 ###Instagram
 * ladda instagram med intent
-* hämta bilder med hashtag från api
-* pagnation med bilder
-* lägga till bilder på fördefinerat konto (bröllopskonto) med api?
-* ordna med fragments + knappar
+* ~~hämta bilder med hashtag från api~~
+* pagnation med bilder i ScrollView
+* ~~lägga till bilder på fördefinerat konto (bröllopskonto) med api EJ MÖJLIGT~~
+* ~~ordna med fragments + knappar~~
 
 ###Google maps
-* ordna med fragemnts
+* ~~ordna med fragemnts~~
 * lägg till länk till vägbeskrivning i snippet (intent?)
+
+###Quiz
+* skapa struktur
+* hitta på frågor
 
 ###Annat
 * skapa bröllopsmail (gmail) och ändra contactusU
