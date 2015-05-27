@@ -1,16 +1,17 @@
 package christopherfrida.christopherfridasweddingapp;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 
 import christopherfrida.christopherfridasweddingapp.InstagramHelpers.BitmapDownloaderTask;
-import christopherfrida.christopherfridasweddingapp.InstagramHelpers.ZoomImageView;
 
-public class ImageActivity extends Activity {
+public class ImageActivity extends AppCompatActivity {
 
-	ZoomImageView imageView;
+	//ZoomImageView imageView;
+	ImageView imageView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class ImageActivity extends Activity {
 
 		if (url.length() > 0) {
 
-			imageView = (ZoomImageView) findViewById(R.id.full_image_view);
+			imageView = (ImageView) findViewById(R.id.full_image_view);
 
 			// start a task to download the image
 			BitmapDownloaderTask task = new BitmapDownloaderTask(imageView);
@@ -31,6 +32,7 @@ public class ImageActivity extends Activity {
 				task.execute(url);
 
 		} else {
+
 
 			// display error message
 

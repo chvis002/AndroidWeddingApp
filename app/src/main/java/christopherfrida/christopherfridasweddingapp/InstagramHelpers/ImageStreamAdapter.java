@@ -57,7 +57,7 @@ public class ImageStreamAdapter extends BaseAdapter {
 		{
 			imageView = new ImageView(c);
 			imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-			imageView.setLayoutParams(new GridView.LayoutParams(220, 220));
+			imageView.setLayoutParams(new GridView.LayoutParams(500, 500));
 		}
 		else	// Re-use the view
 		{

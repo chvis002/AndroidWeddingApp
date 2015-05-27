@@ -8,20 +8,23 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="@dimen/abc_button_padding_horizontal_material"
+        android:layout_height="wrap_content"
         android:id="@+id/login"
-        android:text="Log in to Instagram"/>
-    <GridView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/image_grid_view"
+        android:text="Logga in på Instagram"
+        android:onClick="startInstagram"/>
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dip"
-        android:numColumns="2"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="20dp"
-        android:horizontalSpacing="20dp"
-        android:gravity="center"
-        android:layout_below="@id/login"/>
+        android:layout_below="@id/login"></ScrollView>
 
+    <ListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/image_grid_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:layout_below="@+id/login"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

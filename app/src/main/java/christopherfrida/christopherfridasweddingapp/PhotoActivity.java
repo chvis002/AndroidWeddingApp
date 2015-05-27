@@ -1,11 +1,13 @@
 package christopherfrida.christopherfridasweddingapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.widget.GridView;
+import android.view.View;
+import android.widget.ListView;
 
 import org.json.JSONObject;
 
@@ -15,8 +17,18 @@ import christopherfrida.christopherfridasweddingapp.InstagramHelpers.WebInterfac
 public class PhotoActivity extends AppCompatActivity {
 
     private JSONObject imageData;
-    private GridView gridView;
-    private static int TILE_WIDTH = 220;
+    private ListView listView;
+
+    private static final String HASHTAG = "nofilter";
+
+    private static String CLIENT_ID = "00dde0c83c964baf98d5d9a00367855d";
+    private static int COUNT = 10;
+
+    //change tag from nofilter to something else
+    private static final String FETCH_URL = "https://api.instagram.com/v1/tags/nofilter/media/recent?client_id=";
+    private static String FETCH_COUNT_PARAM = "&count=";
+
+    private static int TILE_WIDTH = 500;
     int number = 0;
     RequestImagesTask request;
     Context contexto;
@@ -26,10 +38,10 @@ public class PhotoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
 
-        gridView = (GridView) findViewById(R.id.image_grid_view);
+        listView = (ListView) findViewById(R.id.image_grid_view);
 
         request = new RequestImagesTask(
-                "https://api.instagram.com/v1/tags/nofilter/media/recent?client_id=00dde0c83c964baf98d5d9a00367855d&count=5",
+                "https://api.instagram.com/v1/tags/nofilter/media/recent?client_id=00dde0c83c964baf98d5d9a00367855d&count=10",
                 this);
         request.execute();
 
@@ -37,14 +49,16 @@ public class PhotoActivity extends AppCompatActivity {
 
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        gridView.setNumColumns(metrics.widthPixels / TILE_WIDTH);
+        //listView.setNumColumns(metrics.widthPixels / TILE_WIDTH);
 
-        /*gridView.setOnItemClickListener(new OnItemClickListener() {
+        //this doesn't work
+        /*
+        listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
 
-                Intent i = new Intent(this, ImageActivity.class);
+                Intent i = new Intent(PhotoActivity.this, ImageActivity.class);
 
                 try {
 
@@ -52,15 +66,17 @@ public class PhotoActivity extends AppCompatActivity {
                             .getJSONObject(position).getJSONObject("images")
                             .getJSONObject("standard_resolution")
                             .getString("url");
+                    Log.d(url, url);
                     i.putExtra("url", url);
                 } catch (JSONException e) {
+
                     i.putExtra("url", "");
                 }
 
                 startActivity(i);
             }
         });
-        gridView.setOnScrollListener(new OnScrollListener() {
+         listView.setOnScrollListener(new OnScrollListener() {
 
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -71,8 +87,8 @@ public class PhotoActivity extends AppCompatActivity {
             public void onScroll(AbsListView view, int firstVisibleItem,
                                  int visibleItemCount, int totalItemCount) {
             }
-        }); */
-
+        });
+    */
     }
 
     private class RequestImagesTask extends AsyncTask<Void, Void, Void> {
@@ -93,8 +109,36 @@ public class PhotoActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void unused) {
-            gridView.setAdapter(new ImageStreamAdapter(c, imageData));
+             listView.setAdapter(new ImageStreamAdapter(c, imageData));
         }
+
+    }
+
+    public void startInstagram(View v) {
+
+        String type = "image/*";
+        //String filename = "/myPhoto.jpg";
+        //String mediaPath = Environment.getExternalStorageDirectory() + filename;
+
+
+        // Create the new Intent using the 'Send' action.
+        Intent share = new Intent(Intent.ACTION_SEND);
+
+        // Set the MIME type
+        share.setType(type);
+
+        // Create the URI from the media
+        //File media = new File(mediaPath);
+        //Uri uri = Uri.fromFile(media);
+
+        // Add the URI and the caption to the Intent.
+        //    share.putExtra(Intent.EXTRA_STREAM, uri);
+        //share.putExtra(Intent.EXTRA_TEXT, HASHTAG);
+
+        // Broadcast the Intent.
+        startActivity(Intent.createChooser(share, "Share to"));
+
+
 
     }
 
