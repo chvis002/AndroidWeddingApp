@@ -78,7 +78,7 @@ public class ImageStreamAdapter extends BaseAdapter {
 	        if (other != null)
 	        	other.cancel(false);
 
-			String url = imageData.getJSONArray("data").getJSONObject(position).getJSONObject("images").getJSONObject("thumbnail").getString("url");
+			String url = imageData.getJSONArray("data").getJSONObject(position).getJSONObject("images").getJSONObject("standard_resolution").getString("url");
 			
 			if (!task.searchCache(url))
 				task.execute(url);
