@@ -2,12 +2,13 @@ package christopherfrida.christopherfridasweddingapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.ListView;
 
 import org.json.JSONObject;
@@ -55,7 +56,9 @@ public class PhotoActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.image_list_view);
 
-        String requestURL = FETCH_URL+CLIENT_ID+FETCH_COUNT_PARAM+COUNT;
+        String requestURL = FETCH_URL+CLIENT_ID
+                //+FETCH_COUNT_PARAM+COUNT
+                ;
         Log.d("requestURL",requestURL);
 
         request = new RequestImagesTask(
@@ -65,9 +68,9 @@ public class PhotoActivity extends AppCompatActivity {
                 this);
         request.execute();
 
-        request = new RequestImagesTask("https://api.instagram.com/v1/users/181858847/media/recent/?client_id=00dde0c83c964baf98d5d9a00367855d&count=5", this)
-        request.execute();
-        
+//        request = new RequestImagesTask("https://api.instagram.com/v1/users/181858847/media/recent/?client_id=00dde0c83c964baf98d5d9a00367855d&count=5", this);
+//        request.execute();
+
         contexto = this;
 
         //DisplayMetrics metrics = new DisplayMetrics();
@@ -98,7 +101,7 @@ public class PhotoActivity extends AppCompatActivity {
 
                 startActivity(i);
             }
-        });*/
+        });
 
          listView.setOnScrollListener(new AbsListView.OnScrollListener() {
 
@@ -111,7 +114,7 @@ public class PhotoActivity extends AppCompatActivity {
             public void onScroll(AbsListView view, int firstVisibleItem,
                                  int visibleItemCount, int totalItemCount) {
             }
-        });
+        });*/
 
     }
 
@@ -144,27 +147,28 @@ public class PhotoActivity extends AppCompatActivity {
 
     public void startInstagram(View v) {
 
-        String type = "image/*";
-        //String filename = "/myPhoto.jpg";
-        //String mediaPath = Environment.getExternalStorageDirectory() + filename;
+        String instagramPackageName = "com.instagram.android";
+        try {
+            getPackageManager().getApplicationInfo(instagramPackageName,0);
 
+            Intent intent = getPackageManager().getLaunchIntentForPackage(instagramPackageName);
 
-        // Create the new Intent using the 'Send' action.
-        Intent share = new Intent(Intent.ACTION_SEND);
+            if (intent != null) {
+        /* We found the activity now start the activity */
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                this.startActivity(intent);
+            } else {
+        /* Bring user to the market or let them choose an app? */
 
-        // Set the MIME type
-        share.setType(type);
+            }
 
-        // Create the URI from the media
-        //File media = new File(mediaPath);
-        //Uri uri = Uri.fromFile(media);
-
-        // Add the URI and the caption to the Intent.
-        //    share.putExtra(Intent.EXTRA_STREAM, uri);
-        //share.putExtra(Intent.EXTRA_TEXT, HASHTAG);
-
-        // Broadcast the Intent.
-        startActivity(Intent.createChooser(share, "Share to"));
+        } catch (PackageManager.NameNotFoundException e){
+           Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setData(Uri.parse("market://details?id=" + instagramPackageName));
+            this.startActivity(intent);
+            //instagram not installed
+        }
 
 
 
